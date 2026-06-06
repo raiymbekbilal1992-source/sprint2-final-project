@@ -1,10 +1,8 @@
-package model;
+public abstract class Food implements Discountable {
 
-public abstract class Food {
-   protected int amount;
-   protected double price;
-   protected boolean isVegetarian;
-
+    protected int amount;
+    protected double price;
+    protected boolean isVegetarian;
 
     public int getAmount() {
         return amount;
@@ -18,4 +16,8 @@ public abstract class Food {
         return isVegetarian;
     }
 
+    @Override
+    public double getDiscount() {
+        return 0;
+    }
 }
