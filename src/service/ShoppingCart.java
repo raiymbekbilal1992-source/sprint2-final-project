@@ -24,14 +24,9 @@ public class ShoppingCart {
         double total = 0;
         for (Food item : items) {
             double sum = item.getAmount() * item.getPrice();
-
-            if (item instanceof Discountable) {
-                double discount = ((Discountable) item).getDiscount();
-                sum -= sum * discount / 100;
-            }
-
+            sum = sum - sum * item.getDiscount() / 100;
             total += sum;
-        }
+                }
         return total;
     }
 
